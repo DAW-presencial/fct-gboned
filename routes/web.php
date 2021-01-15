@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MiControlador;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,5 @@ Route::get('contacto', function() {
 Route::get('saludo/{nombre?}', function($nombre = "Invitado") {
     return "Hola $nombre";
 });
+
+Route::get('/admin', [MiControlador::class, 'index']);
