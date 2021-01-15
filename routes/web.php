@@ -27,3 +27,7 @@ Route::get('saludo/{nombre?}', function($nombre = "Invitado") {
 });
 
 Route::get('/admin', [MiControlador::class, 'index']);
+
+Route::get('/borrar', function() {
+    return "Ejemplo con middleware";
+})->middleware('delete');
