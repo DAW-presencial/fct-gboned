@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MiControlador;
+use App\Http\Controllers\EmailControlador;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,3 +54,5 @@ Route::get('/borrar', function() {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::get('/email', [EmailControlador::class, 'enviarEmail']);
