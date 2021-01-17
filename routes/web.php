@@ -15,7 +15,8 @@ use App\Http\Controllers\MiControlador;
 */
 
 Route::get('home', function() {
-    return view('welcome');
+    $nombre = "Juan";
+    return view('home')->with("nombre", $nombre);
 })->name('home');
 
 Route::get('/', function () {
