@@ -14,6 +14,10 @@ use App\Http\Controllers\MiControlador;
 |
 */
 
+Route::get('home', function() {
+    return view('welcome');
+})->name('home');
+
 Route::get('/', function () {
    // return view('welcome');
    echo "<a href='" . route('contacto') . "'>Contacto 1</a><br>";
