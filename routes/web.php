@@ -50,3 +50,6 @@ Route::get('/admin', [MiControlador::class, 'index']);
 Route::get('/borrar', function() {
     return "Ejemplo con middleware";
 })->middleware('delete');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
