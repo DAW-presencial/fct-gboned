@@ -15,12 +15,17 @@ use App\Http\Controllers\MiControlador;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+   // return view('welcome');
+   echo "<a href='" . route('contacto') . "'>Contacto 1</a><br>";
+   echo "<a href='" . route('contacto') . "'>Contacto 2</a><br>";
+   echo "<a href='" . route('contacto') . "'>Contacto 3</a><br>";
+   echo "<a href='" . route('contacto') . "'>Contacto 4</a><br>";
+   echo "<a href='" . route('contacto') . "'>Contacto 5</a><br>";
 });
 
 Route::get('contacto', function() {
     return "Hola desde la página de contacto";
-});
+})->name('contacto');
 
 Route::get('saludo/{nombre?}', function($nombre = "Invitado") {
     return "Hola $nombre";
