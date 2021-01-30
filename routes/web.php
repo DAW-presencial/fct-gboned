@@ -20,13 +20,7 @@ Route::get('home', function() {
     return view('home')->with("nombre", $nombre);
 })->name('home');
 
-$portfolio = [
-    ['title' => 'Proyecto #1'],
-    ['title' => 'Proyecto #2'],
-];
-
 Route::view('/about', 'about')->name('about');
-Route::view('/portfolio', 'portfolio', compact('portfolio'))->name('portfolio');
 Route::view('/contact', 'contact')->name('contact');
 
 Route::get('/', function () {
@@ -56,3 +50,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('/email', [EmailControlador::class, 'enviarEmail']);
+Route::get('/portfolio', 'PortfolioController')->name('portfolio');
