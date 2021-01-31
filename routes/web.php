@@ -50,4 +50,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('/email', [EmailControlador::class, 'enviarEmail']);
-Route::get('/portfolio', 'PortfolioController')->name('portfolio');
+//Route::get('/portfolio', 'PortfolioControllerResource@index')->name('portfolio');
+
+Route::resource('projects', 'PortfolioControllerResource');
