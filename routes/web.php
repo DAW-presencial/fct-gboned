@@ -23,6 +23,11 @@ Route::get('home', function() {
 Route::view('/about', 'about')->name('about');
 Route::get('/portfolio', 'PortfolioControllerResource@index')->name('portfolio');
 Route::view('/contact', 'contact')->name('contact');
+Route::view('/form', 'form')->name('form');
+
+// Envío formulario por post
+Route::post('form', 'FormController@store');
+//Route::get('/form/crear', 'FormController@create')->name('create');
 
 Route::get('/', function () {
    // return view('welcome');
